@@ -1,10 +1,10 @@
-import { validatenull } from './validate'
+import {validatenull} from './validate';
 //表单序列化
 export const serialize = data => {
     let list = [];
     Object.keys(data).forEach(ele => {
-        list.push(`${ele}=${data[ele]}`)
-    })
+        list.push(`${ele}=${data[ele]}`);
+    });
     return list.join('&');
 };
 export const getObjType = obj => {
@@ -67,7 +67,7 @@ export const toggleGrayMode = (status) => {
  */
 export const setTheme = (name) => {
     document.body.className = name;
-}
+};
 
 /**
  * 加密处理
@@ -83,11 +83,11 @@ export const encryption = (params) => {
     if (type == 'Base64') {
         param.forEach(ele => {
             result[ele] = btoa(result[ele]);
-        })
+        });
     } else if (type == 'Aes') {
         param.forEach(ele => {
             result[ele] = window.CryptoJS.AES.encrypt(result[ele], key).toString();
-        })
+        });
 
     }
     return result;
@@ -109,18 +109,19 @@ export const fullscreenToggel = () => {
  */
 export const listenfullscreen = (callback) => {
     function listen() {
-        callback()
+        callback();
     }
-    document.addEventListener("fullscreenchange", function () {
+
+    document.addEventListener('fullscreenchange', function () {
         listen();
     });
-    document.addEventListener("mozfullscreenchange", function () {
+    document.addEventListener('mozfullscreenchange', function () {
         listen();
     });
-    document.addEventListener("webkitfullscreenchange", function () {
+    document.addEventListener('webkitfullscreenchange', function () {
         listen();
     });
-    document.addEventListener("msfullscreenchange", function () {
+    document.addEventListener('msfullscreenchange', function () {
         listen();
     });
 };
@@ -128,9 +129,9 @@ export const listenfullscreen = (callback) => {
  * 浏览器判断是否全屏
  */
 export const fullscreenEnable = () => {
-    var isFullscreen = document.isFullScreen || document.mozIsFullScreen || document.webkitIsFullScreen
+    var isFullscreen = document.isFullScreen || document.mozIsFullScreen || document.webkitIsFullScreen;
     return isFullscreen;
-}
+};
 
 /**
  * 浏览器全屏
@@ -217,7 +218,7 @@ export const diff = (obj1, obj2) => {
         }
     }
     return true;
-}
+};
 /**
  * 根据字典的value显示label
  */
@@ -272,36 +273,36 @@ export const randomLenNum = (len, date) => {
  */
 export const openWindow = (url, title, w, h) => {
     // Fixes dual-screen position                            Most browsers       Firefox
-    const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left
-    const dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top
+    const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
+    const dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
 
-    const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width
-    const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height
+    const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+    const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
-    const left = ((width / 2) - (w / 2)) + dualScreenLeft
-    const top = ((height / 2) - (h / 2)) + dualScreenTop
-    const newWindow = window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left)
+    const left = ((width / 2) - (w / 2)) + dualScreenLeft;
+    const top = ((height / 2) - (h / 2)) + dualScreenTop;
+    const newWindow = window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 
     // Puts focus on the newWindow
     if (window.focus) {
-        newWindow.focus()
+        newWindow.focus();
     }
-}
+};
 
 /**
  * 获取顶部地址栏地址
  */
 export const getTopUrl = () => {
-  return window.location.href.split("/#/")[0];
-}
+    return window.location.href.split('/#/')[0];
+};
 
 /**
  * 获取url参数
  * @param name 参数名
  */
 export const getQueryString = (name) => {
-  let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-  let r = window.location.search.substr(1).match(reg);
-  if (r != null) return unescape(decodeURI(r[2]));
-  return null;
-}
+    let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    let r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(decodeURI(r[2]));
+    return null;
+};

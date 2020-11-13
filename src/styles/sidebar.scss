@@ -1,21 +1,25 @@
 
-
-.el-menu--popup{
-    .el-menu-item{
+.el-menu--popup {
+    .el-menu-item {
         background-color: #20222a;
-        i{
+
+        i {
             margin-right: 5px;
         }
-        i,span{
-            color:hsla(0,0%,100%,.7);
+
+        i, span {
+            color: hsla(0, 0%, 100%, .7);
         }
-        &:hover{
-            i,span{
-                color:#fff;
+
+        &:hover {
+            i, span {
+                color: #fff;
             }
         }
+
         &.is-active {
-            background-color: rgba(0,0,0,.8);
+            background-color: rgba(0, 0, 0, .8);
+
             &:before {
                 content: '';
                 top: 0;
@@ -25,15 +29,17 @@
                 background: #409eff;
                 position: absolute;
             }
-            i,span{
-                color:#fff;
+
+            i, span {
+                color: #fff;
             }
         }
     }
-    
+
 }
+
 .avue-sidebar {
-    user-select: none; 
+    user-select: none;
     position: relative;
     padding-top: 60px;
     height: 100%;
@@ -41,36 +47,42 @@
     background-color: #20222a;
     transition: width .2s;
     box-sizing: border-box;
-    box-shadow: 2px 0 6px rgba(0,21,41,.35);
-    &--tip{
-        width:90%;
+    box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+
+    &--tip {
+        width: 90%;
         height: 140px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 5px;
         position: absolute;
-        top:5px;
-        left:5%;
-        color:#ccc;
+        top: 5px;
+        left: 5%;
+        color: #ccc;
         z-index: 2;
         text-align: center;
         font-size: 14px;
-        background-color: rgba(0,0,0,.4);
+        background-color: rgba(0, 0, 0, .4);
     }
-    .el-menu-item,.el-submenu__title{
-        i{
+
+    .el-menu-item, .el-submenu__title {
+        i {
             margin-right: 5px;
         }
-        i,span{
-            color:hsla(0,0%,100%,.7);
+
+        i, span {
+            color: hsla(0, 0%, 100%, .7);
         }
-        &:hover{
+
+        &:hover {
             background: transparent;
-            i,span{
-               color:#fff;
+
+            i, span {
+                color: #fff;
             }
         }
+
         &.is-active {
             &:before {
                 content: '';
@@ -81,9 +93,11 @@
                 background: #409eff;
                 position: absolute;
             }
-            background-color: rgba(0,0,0,.8);
-            i,span{
-                color:#fff;
+
+            background-color: rgba(0, 0, 0, .8);
+
+            i, span {
+                color: #fff;
             }
         }
     }

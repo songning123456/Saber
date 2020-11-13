@@ -11,4 +11,4 @@ export default {
             return 0; //超小屏幕
         }
     }
-}
+};

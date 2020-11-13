@@ -1,5 +1,6 @@
-import Mock from 'mockjs'
-export default ({ mock }) => {
+import Mock from 'mockjs';
+
+export default ({mock}) => {
     if (!mock) return;
     // 用户登录
     Mock.mock('/user/login', 'post', {
@@ -16,7 +17,7 @@ export default ({ mock }) => {
 
     //获取表格数据
     Mock.mock('/user/getTable', 'get', () => {
-        let list = []
+        let list = [];
         for (let i = 0; i < 5; i++) {
             list.push(Mock.mock({
                 id: '@increment',
@@ -28,10 +29,10 @@ export default ({ mock }) => {
                 datetime: 1532932422071,
                 'sex|0-1': 0,
                 moreselect: [0, 1],
-                "grade": 0,
+                'grade': 0,
                 address: Mock.mock('@cparagraph(1, 3)'),
                 check: [1, 3, 4]
-            }))
+            }));
         }
         return {
             data: {
@@ -39,6 +40,6 @@ export default ({ mock }) => {
                 pageSize: 10,
                 tableData: list
             }
-        }
-    })
+        };
+    });
 }

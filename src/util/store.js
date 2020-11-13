@@ -1,7 +1,7 @@
 import {
     validatenull
 } from '@/util/validate';
-import website from '@/config/website'
+import website from '@/config/website';
 
 const keyName = website.key + '-';
 /**
@@ -13,16 +13,16 @@ export const setStore = (params = {}) => {
         content,
         type,
     } = params;
-    name = keyName + name
+    name = keyName + name;
     let obj = {
         dataType: typeof (content),
         content: content,
         type: type,
         datetime: new Date().getTime()
-    }
+    };
     if (type) window.sessionStorage.setItem(name, JSON.stringify(obj));
     else window.localStorage.setItem(name, JSON.stringify(obj));
-}
+};
 /**
  * 获取localStorage
  */
@@ -32,7 +32,7 @@ export const getStore = (params = {}) => {
         name,
         debug
     } = params;
-    name = keyName + name
+    name = keyName + name;
     let obj = {},
         content;
     obj = window.sessionStorage.getItem(name);
@@ -40,7 +40,7 @@ export const getStore = (params = {}) => {
     if (validatenull(obj)) return;
     try {
         obj = JSON.parse(obj);
-    } catch{
+    } catch {
         return obj;
     }
     if (debug) {
@@ -56,7 +56,7 @@ export const getStore = (params = {}) => {
         content = obj.content;
     }
     return content;
-}
+};
 /**
  * 删除localStorage
  */
@@ -65,14 +65,14 @@ export const removeStore = (params = {}) => {
         name,
         type
     } = params;
-    name = keyName + name
+    name = keyName + name;
     if (type) {
         window.sessionStorage.removeItem(name);
     } else {
         window.localStorage.removeItem(name);
     }
 
-}
+};
 
 /**
  * 获取全部localStorage
@@ -90,7 +90,7 @@ export const getAllStore = (params = {}) => {
                     name: window.sessionStorage.key(i),
                     type: 'session'
                 })
-            })
+            });
         }
     } else {
         for (let i = 0; i <= window.localStorage.length; i++) {
@@ -99,23 +99,23 @@ export const getAllStore = (params = {}) => {
                 content: getStore({
                     name: window.localStorage.key(i),
                 })
-            })
+            });
 
         }
     }
     return list;
 
-}
+};
 
 /**
  * 清空全部localStorage
  */
 export const clearStore = (params = {}) => {
-    let { type } = params;
+    let {type} = params;
     if (type) {
         window.sessionStorage.clear();
     } else {
-        window.localStorage.clear()
+        window.localStorage.clear();
     }
 
-}
+};

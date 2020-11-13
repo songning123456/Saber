@@ -5,4 +5,4 @@ export default {
         icon: 'icon',
         children: 'children'
     }
-}
+};
