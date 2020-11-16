@@ -37,11 +37,7 @@
         <el-form-item v-if="captchaMode" prop="code">
             <el-row :span="24">
                 <el-col :span="16">
-                    <el-input size="small"
-                              @keyup.enter.native="handleLogin"
-                              v-model="loginForm.code"
-                              auto-complete="off"
-                              :placeholder="$t('login.code')">
+                    <el-input size="small" @keyup.enter.native="handleLogin" v-model="loginForm.code" auto-complete="off" :placeholder="$t('login.code')">
                         <i slot="prefix" class="icon-yanzhengma"/>
                     </el-input>
                 </el-col>

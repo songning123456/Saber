@@ -1,15 +1,10 @@
 <template>
-    <div class="login-container"
-         @keyup.enter.native="handleLogin">
+    <div class="login-container" @keyup.enter.native="handleLogin">
         <top-color v-show="false"></top-color>
         <div class="login-weaper animated bounceInDown">
             <div class="login-left">
-                <div class="login-time">
-                    {{time}}
-                </div>
-                <img class="img"
-                     src="/img/logo.png"
-                     alt="">
+                <div class="login-time">{{time}}</div>
+                <img class="img" src="/img/logo.png" alt="">
                 <p class="title">{{ $t('login.info') }}</p>
             </div>
             <div class="login-border">
@@ -27,7 +22,6 @@
                         <a href="#" @click.stop="activeName='third'">{{ $t('login.thirdLogin') }}</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

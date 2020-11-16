@@ -1,14 +1,9 @@
 <template>
-    <el-dropdown trigger="click"
-                 @command="handleSetLanguage">
+    <el-dropdown trigger="click" @command="handleSetLanguage">
         <i class="icon-zhongyingwen"></i>
         <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item :disabled="language==='zh'"
-                              command="zh">中文
-            </el-dropdown-item>
-            <el-dropdown-item :disabled="language==='en'"
-                              command="en">English
-            </el-dropdown-item>
+            <el-dropdown-item :disabled="language==='zh'" command="zh">中文</el-dropdown-item>
+            <el-dropdown-item :disabled="language==='en'" command="en">English</el-dropdown-item>
         </el-dropdown-menu>
     </el-dropdown>
 </template>

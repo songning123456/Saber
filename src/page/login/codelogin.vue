@@ -1,42 +1,20 @@
 <template>
-    <el-form class="login-form"
-             status-icon
-             :rules="loginRules"
-             ref="loginForm"
-             :model="loginForm"
-             label-width="0">
+    <el-form class="login-form" status-icon :rules="loginRules" ref="loginForm" label-width="0">
         <el-form-item prop="phone">
-            <el-input size="small"
-                      @keyup.enter.native="handleLogin"
-                      v-model="loginForm.phone"
-                      auto-complete="off"
-                      :placeholder="$t('login.phone')">
-                <i slot="prefix"
-                   class="icon-shouji"></i>
+            <el-input size="small" @keyup.enter.native="handleLogin" v-model="loginForm.phone" auto-complete="off" :placeholder="$t('login.phone')">
+                <i slot="prefix" class="icon-shouji"></i>
             </el-input>
         </el-form-item>
         <el-form-item prop="code">
-            <el-input size="small"
-                      @keyup.enter.native="handleLogin"
-                      v-model="loginForm.code"
-                      auto-complete="off"
-                      :placeholder="$t('login.code')">
-                <i slot="prefix"
-                   class="icon-yanzhengma"
-                   style="margin-top:6px;"></i>
+            <el-input size="small" @keyup.enter.native="handleLogin" v-model="loginForm.code" auto-complete="off" :placeholder="$t('login.code')">
+                <i slot="prefix" class="icon-yanzhengma" style="margin-top:6px;"></i>
                 <template slot="append">
-          <span @click="handleSend"
-                class="msg-text"
-                :class="[{display:msgKey}]">{{msgText}}</span>
+                    <span @click="handleSend" class="msg-text" :class="[{display:msgKey}]">{{msgText}}</span>
                 </template>
             </el-input>
         </el-form-item>
         <el-form-item>
-            <el-button size="small"
-                       type="primary"
-                       @click.native.prevent="handleLogin"
-                       class="login-submit">{{$t('login.submit')}}
-            </el-button>
+            <el-button size="small" type="primary" @click.native.prevent="handleLogin" class="login-submit">{{$t('login.submit')}}</el-button>
         </el-form-item>
     </el-form>
 </template>
@@ -56,7 +34,7 @@
                 }
             };
             const validateCode = (rule, value, callback) => {
-                if (value.length != 4) {
+                if (value.length !== 4) {
                     callback(new Error('请输入4位数的验证码'));
                 } else {
                     callback();
@@ -101,7 +79,7 @@
                 const time = setInterval(() => {
                     this.msgTime--;
                     this.msgText = this.msgTime + this.config.MSGSCUCCESS;
-                    if (this.msgTime == 0) {
+                    if (this.msgTime === 0) {
                         this.msgTime = this.config.MSGTIME;
                         this.msgText = this.config.MSGINIT;
                         this.msgKey = false;
