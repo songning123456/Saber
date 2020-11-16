@@ -12,8 +12,6 @@ import {serialize} from '@/util/util';
 import {getToken} from '@/util/auth';
 import {Message} from 'element-ui';
 import website from '@/config/website';
-import NProgress from 'nprogress'; // progress bar
-import 'nprogress/nprogress.css'; // progress bar style
 import {Base64} from 'js-base64';
 
 axios.defaults.timeout = 10000;
@@ -23,13 +21,9 @@ axios.defaults.validateStatus = function (status) {
 };
 //跨域请求，允许保存cookie
 axios.defaults.withCredentials = true;
-// NProgress Configuration
-NProgress.configure({
-    showSpinner: false
-});
-//HTTPrequest拦截
+
+//HTTP request拦截
 axios.interceptors.request.use(config => {
-    NProgress.start(); // start progress bar
     const meta = (config.meta || {});
     const isToken = meta.isToken === false;
     config.headers['Authorization'] = `Basic ${Base64.encode(`${website.clientId}:${website.clientSecret}`)}`;
@@ -44,9 +38,8 @@ axios.interceptors.request.use(config => {
 }, error => {
     return Promise.reject(error);
 });
-//HTTPresponse拦截
+//HTTP response拦截
 axios.interceptors.response.use(res => {
-    NProgress.done();
     const status = res.data.code || 200;
     const statusWhiteList = website.statusWhiteList || [];
     const message = res.data.msg || '未知错误';
@@ -64,7 +57,6 @@ axios.interceptors.response.use(res => {
     }
     return res;
 }, error => {
-    NProgress.done();
     return Promise.reject(new Error(error));
 });
 

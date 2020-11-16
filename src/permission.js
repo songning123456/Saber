@@ -6,9 +6,6 @@ import router from './router/router';
 import store from './store';
 import {validatenull} from '@/util/validate';
 import {getToken} from '@/util/auth';
-import NProgress from 'nprogress'; // progress bar
-import 'nprogress/nprogress.css'; // progress bar style
-NProgress.configure({showSpinner: false});
 const lockPage = store.getters.website.lockPage; //锁屏页
 router.beforeEach((to, from, next) => {
     const meta = to.meta || {};
@@ -61,7 +58,6 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach(() => {
-    NProgress.done();
     let title = store.getters.tag.label;
     let i18n = store.getters.tag.meta.i18n;
     title = router.$avueRouter.generateTitle(title, i18n);

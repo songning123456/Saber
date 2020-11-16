@@ -14,7 +14,6 @@
 
 <style lang="scss">
     .basic-container {
-        padding: 10px 6px;
         border-radius: 10px;
         box-sizing: border-box;
 

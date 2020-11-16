@@ -1,12 +1,8 @@
 <template>
     <div class='top-theme'>
-        <el-dialog title="选择" :visible.sync="box" width="50%">
+        <el-dialog title="主题" :visible.sync="box" width="25%">
             <el-radio-group v-model="text" class="list">
-                <el-row :span="24">
-                    <el-col v-for="(item,index) in list" :key="index" :md="4" :xs="12" :sm="4">
-                        <el-radio :label="item.value">{{item.name}}</el-radio>
-                    </el-col>
-                </el-row>
+                <el-radio v-for='(item, index) in list' :key='index' :label="item.value">{{item.name}}</el-radio>
             </el-radio-group>
         </el-dialog>
         <span>

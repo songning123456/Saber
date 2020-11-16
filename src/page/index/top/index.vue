@@ -46,7 +46,7 @@
                     <i :class="isFullScren?'icon-tuichuquanping':'icon-quanping'" @click="handleScreen"></i>
                 </div>
             </el-tooltip>
-            <img class="top-bar__img" :src="userInfo.avatar">
+            <img class="top-bar__img" :src="userInfo.avatar" />
             <el-dropdown>
                 <span class="el-dropdown-link">
                     {{userInfo.userName}}

@@ -2,7 +2,7 @@
 .avue-header,
 .avue-top,
 .avue-logo,
-.avue-layout
+.avue-layout,
 .login-logo,
 .avue-main {
     transition: all .3s;
@@ -52,12 +52,31 @@
 .avue-main {
     position: absolute;
     left: 240px;
-    padding: 0;
-    padding-bottom: 20px;
     width: calc(100% - 240px);
-    height: calc(100% - 70px);
+    height: calc(100% - 64px);
     box-sizing: border-box;
     overflow: hidden;
+}
+
+.avue-container {
+    height: calc(100% - 40px);
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+        background: rgba(0, 0, 0, 0.1);
+    }
 }
 
 .avue-view {

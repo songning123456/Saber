@@ -27,6 +27,10 @@
     &--active {
         transform: rotate(90deg);
     }
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .top-menu {
@@ -89,6 +93,10 @@
     display: inline-block;
     margin: 0 10px;
     font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+    }
 
     &--show {
         display: inline-block !important;

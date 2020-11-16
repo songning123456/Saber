@@ -9,12 +9,12 @@
 
             &:hover {
                 i, span {
-                    color: #333;
+                    color: #2778F2;
                 }
             }
 
             &.is-active {
-                background-color: #409EFF;
+                background-color: #e2eeff;
 
                 &:before {
                     content: '';
@@ -27,7 +27,7 @@
                 }
 
                 i, span {
-                    color: #fff;
+                    color: #2778F2;
                 }
             }
         }
@@ -36,7 +36,7 @@
     .avue-header,
     .avue-logo,
     .tags-container {
-        background-color: #409EFF;
+        background-color: #2576e1;
     }
 
     .avue-sidebar--tip {
@@ -64,8 +64,7 @@
 
     .avue-top {
         .el-menu-item {
-            i,
-            span {
+            i, span {
                 color: #fff;
             }
 
@@ -79,9 +78,8 @@
     }
 
     .avue-sidebar {
-        box-shadow: 2px 0 6px rgba(0, 21, 41, 0.15);
-        background-color: #fff;
-        padding-top: 70px;
+        background-color: #f5f7fa;
+        padding-top: 64px;
 
         .el-menu-item, .el-submenu__title {
             i, span {
@@ -92,15 +90,15 @@
                 background: transparent;
 
                 i, span {
-                    color: #333;
+                    color: #2778F2;
                 }
             }
 
             &.is-active {
-                background-color: #409EFF;
+                background-color: #e2eeff;
 
                 i, span {
-                    color: #fff;
+                    color: #2778F2;
                 }
             }
         }
@@ -137,7 +135,7 @@
     }
 
     .top-bar__item {
-        i {
+        i[class^="icon-"] {
             color: #fff;
         }
     }

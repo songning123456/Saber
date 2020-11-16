@@ -1,35 +1,19 @@
 <template>
-    <div class="avue-tags"
-         v-if="showTag">
+    <div class="avue-tags" v-if="showTag">
         <!-- tag盒子 -->
-        <div v-if="contextmenuFlag"
-             class="avue-tags__contentmenu"
+        <div v-if="contextmenuFlag" class="avue-tags__contentmenu"
              :style="{left:contentmenuX+'px',top:contentmenuY+'px'}">
-            <div class="item"
-                 @click="closeOthersTags">{{$t('tagsView.closeOthers')}}
-            </div>
-            <div class="item"
-                 @click="closeAllTags">{{$t('tagsView.closeAll')}}
-            </div>
+            <div class="item" @click="closeOthersTags">{{$t('tagsView.closeOthers')}}</div>
+            <div class="item" @click="closeAllTags">{{$t('tagsView.closeAll')}}</div>
         </div>
-        <div class="avue-tags__box"
-             :class="{'avue-tags__box--close':!website.isFirstPage}">
-            <el-tabs v-model="active"
-                     type="card"
-                     @contextmenu.native="handleContextmenu"
-                     :closable="tagLen!==1"
-                     @tab-click="openTag"
-                     @edit="menuTag">
-                <el-tab-pane :key="item.value"
-                             v-for="item in tagList"
-                             :label="generateTitle(item)"
-                             :name="item.value">
-                </el-tab-pane>
-
+        <div class="avue-tags__box" :class="{'avue-tags__box--close':!website.isFirstPage}">
+            <el-tabs v-model="active" type="card" @contextmenu.native="handleContextmenu" :closable="tagLen!==1"
+                     @tab-click="openTag" @edit="menuTag">
+                <el-tab-pane :key="item.value" v-for="item in tagList" :label="generateTitle(item)"
+                             :name="item.value"></el-tab-pane>
             </el-tabs>
             <el-dropdown class="avue-tags__menu">
-                <el-button type="primary"
-                           size="mini">
+                <el-button type="primary" size="mini">
                     {{$t('tagsView.menu')}}
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </el-button>
@@ -165,5 +149,6 @@
         }
     };
 </script>
+
 
 
