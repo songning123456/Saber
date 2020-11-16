@@ -1,8 +1,5 @@
 <template>
-    <el-color-picker size="mini"
-                     style="padding-top:18px;"
-                     class="theme-picker"
-                     popper-class="theme-picker-dropdown"
+    <el-color-picker size="mini" class="theme-picker" popper-class="theme-picker-dropdown"
                      v-model="themeVal"></el-color-picker>
 </template>
 

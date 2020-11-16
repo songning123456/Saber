@@ -11,8 +11,7 @@
                       v-model="loginForm.tenantId"
                       auto-complete="off"
                       :placeholder="$t('login.tenantId')">
-                <i slot="prefix"
-                   class="icon-quanxian"></i>
+                <i slot="prefix" class="icon-quanxian"></i>
             </el-input>
         </el-form-item>
         <el-form-item prop="username">
@@ -21,8 +20,7 @@
                       v-model="loginForm.username"
                       auto-complete="off"
                       :placeholder="$t('login.username')">
-                <i slot="prefix"
-                   class="icon-yonghu"></i>
+                <i slot="prefix" class="icon-yonghu"></i>
             </el-input>
         </el-form-item>
         <el-form-item prop="password">
@@ -32,11 +30,8 @@
                       v-model="loginForm.password"
                       auto-complete="off"
                       :placeholder="$t('login.password')">
-                <i class="el-icon-view el-input__icon"
-                   slot="suffix"
-                   @click="showPassword"></i>
-                <i slot="prefix"
-                   class="icon-mima"></i>
+                <i class="el-icon-view el-input__icon" slot="suffix" @click="showPassword"></i>
+                <i slot="prefix" class="icon-mima"></i>
             </el-input>
         </el-form-item>
         <el-form-item v-if="captchaMode" prop="code">
@@ -52,17 +47,13 @@
                 </el-col>
                 <el-col :span="8">
                     <div class="login-code">
-                        <img :src="loginForm.image" class="login-code-img" @click="refreshCode"
-                        />
+                        <img :src="loginForm.image" class="login-code-img" @click="refreshCode"/>
                     </div>
                 </el-col>
             </el-row>
         </el-form-item>
         <el-form-item>
-            <el-button type="primary"
-                       size="small"
-                       @click.native.prevent="handleLogin"
-                       class="login-submit">{{$t('login.submit')}}
+            <el-button type="primary" size="small" @click.native.prevent="handleLogin" class="login-submit">{{$t('login.submit')}}
             </el-button>
         </el-form-item>
     </el-form>
@@ -126,14 +117,14 @@
             refreshCode() {
                 getCaptcha().then(res => {
                     const data = res.data.data;
-                    this.loginForm.key = data.key;
-                    this.loginForm.image = data.image;
+                    if (data) {
+                        this.loginForm.key = data.key;
+                        this.loginForm.image = data.image;
+                    }
                 });
             },
             showPassword() {
-                this.passwordType === ''
-                    ? (this.passwordType = 'password')
-                    : (this.passwordType = '');
+                this.passwordType === '' ? (this.passwordType = 'password') : (this.passwordType = '');
             },
             handleLogin() {
                 this.$refs.loginForm.validate(valid => {

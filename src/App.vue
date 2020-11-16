@@ -10,11 +10,14 @@
         data() {
             return {};
         },
-        watch: {},
-        created() {
+        mounted() {
+            this.resize();
         },
-        methods: {},
-        computed: {}
+        methods: {
+            resize() {
+                document.documentElement.style.fontSize = document.documentElement.offsetWidth / (1920 / 20) + 'px';
+            }
+        }
     };
 </script>
 <style lang="scss">

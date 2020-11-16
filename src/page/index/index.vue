@@ -26,12 +26,6 @@
 
             </div>
         </div>
-        <!-- <el-footer class="avue-footer">
-          <img src="/svg/logo.svg"
-               alt=""
-               class="logo">
-          <p class="copyright">© 2018 Avue designed by smallwei</p>
-        </el-footer> -->
         <div class="avue-shade"
              @click="showCollapse"></div>
     </div>
@@ -43,9 +37,7 @@
     import top from './top/';
     import sidebar from './sidebar/';
     import admin from '@/util/admin';
-    // import { validatenull } from "@/util/validate";
-    // import { calcDate } from "@/util/date.js";
-    // import { getStore } from "@/util/store.js";
+
     export default {
         components: {
             top,
