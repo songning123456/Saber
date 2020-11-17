@@ -17,17 +17,14 @@
                 <!-- 主体视图层 -->
                 <div class='avue-container'>
                     <keep-alive>
-                        <router-view class="avue-view"
-                                     v-if="$route.meta.keepAlive"/>
+                        <router-view class="avue-view" v-if="$route.meta.keepAlive"/>
                     </keep-alive>
-                    <router-view class="avue-view"
-                                 v-if="!$route.meta.keepAlive"/>
+                    <router-view class="avue-view" v-if="!$route.meta.keepAlive"/>
                 </div>
 
             </div>
         </div>
-        <div class="avue-shade"
-             @click="showCollapse"></div>
+        <div class="avue-shade" @click="showCollapse"></div>
     </div>
 </template>
 

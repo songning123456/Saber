@@ -6,7 +6,9 @@ import router from './router/router';
 import store from './store';
 import {validatenull} from '@/util/validate';
 import {getToken} from '@/util/auth';
+
 const lockPage = store.getters.website.lockPage; //锁屏页
+
 router.beforeEach((to, from, next) => {
     const meta = to.meta || {};
     const isMenu = meta.menu === undefined ? to.query.menu : meta.menu;
@@ -26,6 +28,7 @@ router.beforeEach((to, from, next) => {
                 const value = to.query.src || to.fullPath;
                 const label = to.query.name || to.name;
                 const meta = to.meta || router.$avueRouter.meta || {};
+                (!meta.keepAlive) && (meta.keepAlive = true);
                 const i18n = to.query.i18n;
                 if (meta.isTab !== false && !validatenull(value) && !validatenull(label)) {
                     store.commit('ADD_TAG', {
