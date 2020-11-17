@@ -7,11 +7,15 @@ export default {
     search: 'Please input search content',
     menuTip: 'none menu list',
     wel: {
-        info: 'Good morning, Smallwei, Avuex is a framework',
+        info: 'Hello,',
+        intro: 'Welcome to Uni development platform',
         dept: 'a certain technology department',
         team: 'Team ranking',
         project: 'Project access',
         count: 'Item number',
+        role:{
+            title: "current userName"
+        },
         data: {
             subtitle: 'real time',
             column1: 'Classified statistics',

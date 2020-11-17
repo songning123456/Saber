@@ -1,17 +1,21 @@
 export default {
     tip: '提示',
-    title: 'Saber企业级开发平台',
+    title: 'Uni开发平台',
     logoutTip: '退出系统, 是否继续?',
     submitText: '确定',
     cancelText: '取消',
     search: '请输入搜索内容',
     menuTip: '没有发现菜单',
     wel: {
-        info: '早安，Smallwei，Avuex一款超乎你想象的框架！',
+        info: '您好，',
+        intro: '欢迎来到Uni开发平台',
         dept: '我是avue团队下的一个部门-哈皮部门-哈皮职位',
         team: '团队内排名',
         project: '项目访问',
         count: '项目数',
+        role:{
+            title: "当前角色"
+        },
         data: {
             subtitle: '实时',
             column1: '分类统计',
@@ -65,7 +69,7 @@ export default {
     },
     login: {
         title: '登录 ',
-        info: '企业级开发平台',
+        info: 'Uni开发平台',
         tenantId: '请输入租户ID',
         username: '请输入账号',
         password: '请输入密码',

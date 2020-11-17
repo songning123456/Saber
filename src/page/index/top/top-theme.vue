@@ -1,6 +1,6 @@
 <template>
     <div class='top-theme'>
-        <el-dialog title="主题" :visible.sync="box" width="25%">
+        <el-dialog title="主题" :visible.sync="box" width="25%" top='30vh'>
             <el-radio-group v-model="text" class="list">
                 <el-radio v-for='(item, index) in list' :key='index' :label="item.value">{{item.name}}</el-radio>
             </el-radio-group>

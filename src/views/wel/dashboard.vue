@@ -152,5 +152,6 @@
         flex-wrap: wrap;
         width: 1100px;
         margin: 0 auto;
+        background-color: white;
     }
 </style>

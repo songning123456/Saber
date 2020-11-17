@@ -60,10 +60,10 @@
 
 .avue-container {
     height: calc(100% - 40px);
-    overflow: auto;
 
     &::-webkit-scrollbar {
         width: 4px;
+        height: 4px;
     }
 
     &::-webkit-scrollbar-thumb {
@@ -80,9 +80,8 @@
 }
 
 .avue-view {
-    padding-bottom: 22px;
     width: 100%;
-    box-sizing: border-box;
+    height: 100%;
 }
 
 .avue-footer {

@@ -2,14 +2,14 @@
     <div class="avue-logo">
         <transition name="fade">
             <span v-if="keyCollapse" class="avue-logo_subtitle" key="0">
-                <img src="img/bg/left-logo.png" width="30"/>
+                <img src="img/bg/left-logo.png" width="25"/>
             </span>
         </transition>
         <transition-group name="fade">
             <template v-if="!keyCollapse">
                 <span class="avue-logo_title" key="1">
                     <div>
-                        <img src="img/bg/left-logo.png" width="30" alt="">{{website.indexTitle}}
+                        <img src="img/bg/left-logo.png" width="25" alt="">{{website.indexTitle}}
                     </div>
                 </span>
             </template>
