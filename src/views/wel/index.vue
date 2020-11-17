@@ -192,6 +192,10 @@
                 margin-left: unset !important;
                 margin-right: unset !important;
             }
+
+            /deep/ .el-col {
+                margin-bottom: 6px;
+            }
         }
     }
 </style>

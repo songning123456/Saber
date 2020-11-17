@@ -60,6 +60,7 @@
 
 .avue-container {
     height: calc(100% - 40px);
+    overflow-y: auto;
 
     &::-webkit-scrollbar {
         width: 4px;
