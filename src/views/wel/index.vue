@@ -76,7 +76,7 @@
                     current: 1,
                     size: 6,
                 };
-                get('/api/common-demo/route/list', params).then(res => {
+                get('/api/route/list', params).then(res => {
                     if (res.status === 200) {
                         this.platforms.data = res.data.data.records;
                     }

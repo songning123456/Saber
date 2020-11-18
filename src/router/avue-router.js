@@ -108,7 +108,7 @@ RouterPlugin.install = function (vue, router, store, i18n) {
                     name = oMenu[propsDefault.label],
                     icon = oMenu[propsDefault.icon],
                     children = oMenu[propsDefault.children],
-                    meta = oMenu[propsDefault.meta] || {};
+                    meta = oMenu[propsDefault.meta] || {keepAlive: true};
 
                 const isChild = children.length !== 0;
                 const oRouter = {

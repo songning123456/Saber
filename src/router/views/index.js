@@ -8,7 +8,8 @@ export default [{
         path: 'index',
         name: '首页',
         meta: {
-            i18n: 'dashboard'
+            i18n: 'dashboard',
+            keepAlive: true
         },
         component: () =>
             import( /* webpackChunkName: "views" */ '@/views/wel/index')
@@ -18,6 +19,7 @@ export default [{
         meta: {
             i18n: 'dashboard',
             menu: false,
+            keepAlive: true
         },
         component: () =>
             import( /* webpackChunkName: "views" */ '@/views/wel/dashboard')
@@ -30,7 +32,8 @@ export default [{
         path: 'index',
         name: '测试页',
         meta: {
-            i18n: 'test'
+            i18n: 'test',
+            keepAlive: true
         },
         component: () =>
             import( /* webpackChunkName: "views" */ '@/views/util/test')
@@ -43,7 +46,8 @@ export default [{
         path: 'index',
         name: '个人信息',
         meta: {
-            i18n: 'info'
+            i18n: 'info',
+            keepAlive: true
         },
         component: () =>
             import( /* webpackChunkName: "views" */ '@/views/user/info')
