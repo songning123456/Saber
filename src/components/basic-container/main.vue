@@ -19,6 +19,12 @@
 
         .el-card {
             width: 100%;
+            height: 100%;
+
+            /deep/ .el-card__body {
+                height: 100%;
+                box-sizing: border-box;
+            }
         }
 
         &:first-child {
